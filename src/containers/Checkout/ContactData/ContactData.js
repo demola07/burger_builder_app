@@ -36,7 +36,7 @@ class ContactData extends Component {
       },
       deliveryMathod: 'fastest',
     };
-    console.log(order);
+
     axios
       .post('/orders.json', order)
       .then((response) => {
