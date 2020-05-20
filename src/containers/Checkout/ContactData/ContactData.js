@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Button from '../../../components/UI/Button/Button';
 import axios from '../../../axios.orders';
 import Spinner from '../../../components/UI/Spinner/Spinner';
+import withErrorHandler from '../../../hoc/withErrorhandler/withErrorHandler';
+import Input from '../../../components/UI/Input/Input';
 
 import classes from './ContactData.module.css';
 
@@ -52,10 +54,10 @@ class ContactData extends Component {
   render() {
     let form = (
       <form>
-        <input className={classes.Input} type='text' name='name' placeholder='Your name' />
-        <input className={classes.Input} type='email' name='email' placeholder='Your Mail' />
-        <input className={classes.Input} type='text' name='street' placeholder='Street' />
-        <input className={classes.Input} type='text' name='postalCode' placeholder='Postal Code' />
+        <Input inputtype='input' type='text' name='name' placeholder='Your name' />
+        <Input inputtype='input' type='email' name='email' placeholder='Your Mail' />
+        <Input inputtype='input' type='text' name='street' placeholder='Street' />
+        <Input inputtype='input' type='text' name='postalCode' placeholder='Postal Code' />
 
         <Button btnType='Success' clicked={this.orderHandler}>
           {' '}
@@ -68,11 +70,11 @@ class ContactData extends Component {
     }
     return (
       <div className={classes.ContactData}>
-        <h4>Enter yout contact data</h4>
+        <h4>Enter your contact data</h4>
         {form}
       </div>
     );
   }
 }
 
-export default ContactData;
+export default withErrorHandler(ContactData, axios);
