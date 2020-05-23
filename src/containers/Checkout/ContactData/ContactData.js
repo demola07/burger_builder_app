@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Button from '../../../components/UI/Button/Button';
-import axios from '../../../axios.orders';
+import axios from '../../../axios-orders';
 import Spinner from '../../../components/UI/Spinner/Spinner';
-import withErrorHandler from '../../../hoc/withErrorhandler/withErrorHandler';
+import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import Input from '../../../components/UI/Input/Input';
 
 import classes from './ContactData.module.css';
