@@ -21,12 +21,10 @@ export const purchaseBurgerStart = (orderData) => {
     axios
       .post('/orders.json', orderData)
       .then((response) => {
-        this.setState({ loading: false });
-        this.props.history.push('/');
+        dispatch(purchaseBurgerSuccess(response.data, orderData));
       })
       .catch((err) => {
-        this.setState({ loading: false });
-        console.log(err);
+        dispatch(purchaseBurgerFail(error));
       });
   };
 };
